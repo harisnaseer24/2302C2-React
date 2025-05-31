@@ -94,6 +94,14 @@ return (<Card key={index} title={prod.title} price={prod.price} image={prod.thum
   {/* Not found */}
   <Route path="/*" element={<NotFound/>}/>
 
+{/* Route groups/prefixes */}
+<Route path="/admin">
+<Route path="details" element={<Card/>}/>
+<Route path="create" element={<Form/>}/>
+
+</Route>
+
+
 </Routes>
 
  </main>
