@@ -4,19 +4,10 @@ import { useFormStatus } from 'react-dom'
 const ContactUs = () => {
   const { pending }= useFormStatus();
 
-const handleSubmit=async(e)=>{
-  e.preventDefault()
-await
-  new Promise((resolve)=>{
-    setTimeout(()=>{
-      console.log("form submitted");
-     resolve();
-    },2000)
-  })
-}
+
 
   return (
-    <form action={handleSubmit}>
+  
 
     
    <section className="text-gray-600 body-font relative">
@@ -63,8 +54,8 @@ await
           defaultValue={""}
         />
       </div>
-      <button  disabled={pending} type='submit'  className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-        Button
+      <button  disabled={pending} className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+        {pending ? "Submitting...":"Submit"}
       </button>
       <p className="text-xs text-gray-500 mt-3">
         Chicharrones blog helvetica normcore iceland tousled brook viral
@@ -73,7 +64,7 @@ await
     </div>
   </div>
 </section>
-</form>
+
 
   )
 }

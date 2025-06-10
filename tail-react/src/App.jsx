@@ -9,7 +9,16 @@ import ContactUs from './components/Contact/Index'
 
 function App() {
 
-
+const handleSubmit=async()=>{
+ 
+await
+  new Promise((resolve)=>{
+    setTimeout(()=>{
+      console.log("form submitted");
+     resolve();
+    },2000)
+  })
+}
   return (
     <>
 
@@ -23,8 +32,10 @@ function App() {
     <Route path='/contact' element={<Contact/>}/>
      </Routes> */}
 
-  
+  <form action={handleSubmit}>
+
      <ContactUs/>
+  </form>
 
 
     </>
